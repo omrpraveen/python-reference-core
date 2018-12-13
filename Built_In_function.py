@@ -106,7 +106,7 @@ x = 10
 y ='Hi'
 z = 'Hello'
 print(x)
-breakpoint()
+#breakpoint()
 print(z)
 
 
@@ -258,15 +258,71 @@ print(isinstance(child,Child))
 
 child1 = Child.fromFathersAge('test1',12)
 print(isinstance(child1,Child))
-#####
+#####compile()
 '''
+     compile(source, filename, mode, flags=0, dont_inherit=False, optimize=-1)
+
+the compile method is used if the python code is in string form or is an AST object, and you want to change it to  a python code object
+
+the exec() and eval() which will execute dynamically generated python code.
+
+	source -- normal string, byte string or AST object.
+	filename - file from which the code was read, if it wasn't read from a file, you can give a name yourself.
+	mode - Either exec or eval or single.
+		eval - accepts only a single expression.
+		exec - it can take a code block that has python statements, class and unctions and so on.
+		single - if it consists of a single interactive statement.
+	flag and dont_Inherit (optional) controls which future statements affect the compilation of the source. Default value is 0.
+
+	optimize - optinal, optimization level of the compiler. Default value -1
+
 '''
-#####
+code = '''
+a=5
+b=6
+print(a+b)
 '''
+exec(compile(code,'somefilename','exec'))
+
+#####complex() complex(real,imag)
 '''
-#####
+	it returns a complex when real and imaginary parts are provided or it converts a string to a comples number
+	it takes two parameter
+	real - real part, if real is omitted, it default is 0,
+	imag - imaginary part, if imag is omitted, default is 0,
+	if string must be like this real+imagj otherwise it throws ValueError
+
+	there is no need to use complex() while you are declaring is also possible
+	a=2+3j
+
+	
 '''
+z = complex(1,2) #(1,2j)
+print(z)
+z = complex(1) #(1,0j)
+print(z)
+z=complex() #(0,0j)
+print(z)
+z= complex('1-3j') # (1-3j)
+print(z)
+#z=complex('1-4i') #ValueError
+print(z)
+a=2+3j
+print(type(a)) #complex
+
+#####delattr(object,name)
 '''
+	deletes an attribute from the object . if the object allows it. it does not return any value.
+we can use del operator also to delete
+'''
+class delattrex:
+     x =10
+     y =2
+     z= 1
+result = delattrex()
+print(result.x)
+delattr(delattrex,'x')
+print(result.x) ## throws error AttributeError because it is deleted.
 #####
 '''
 '''
