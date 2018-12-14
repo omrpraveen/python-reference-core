@@ -322,17 +322,34 @@ class delattrex:
 result = delattrex()
 print(result.x)
 delattr(delattrex,'x')
-print(result.x) ## throws error AttributeError because it is deleted.
-#####
+##print(result.x)  throws error AttributeError because it is deleted.
+#####dict()
 '''
+dict - see dict.py
 '''
-#####
+#####dir()
 '''
+	returns the valid attributes of the object.
+ if the object has __dir__() method, then this method will be called, 
 '''
-#####
+number =[1,2,3,4]
+print(dir(number)) ## attributes of list
+d = dict({'one':'1'})
+print(dir(d))
+print(dir()) ## it will print attributes of the current object
+print(dir(Persion))
+class Persion:
+     def __dir__(self):
+          return ['age','number']
+tea = Persion()
+print(dir(tea))
+
+#####divmod()
 '''
+	takes two number and returns a pair of numbers consisting of the quotient and remainder
 '''
-#####
+print(divmod(4,2))
+#####enumerate()
 '''
 '''
 #####
